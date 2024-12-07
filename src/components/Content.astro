@@ -1,0 +1,15 @@
+---
+interface Props {
+    isAfterHeader?: boolean;
+}
+const { isAfterHeader = false } = Astro.props;
+---
+
+<main
+    class={"flex justify-center w-full h-full overflow-visible p-8 md:p-16" +
+        (isAfterHeader ? " pt-24 md:pt-32" : "")}
+>
+    <div class="w-full max-w-4xl flex flex-col gap-4">
+        <slot />
+    </div>
+</main>

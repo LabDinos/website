@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Content from "../components/Content.astro";
+---
+
+<Layout
+    title="LabDinos"
+    description="LabDinos: A Roblox games studio creating imaginative and wonderful experiences."
+>
+    <Header />
+    <div
+        class="w-full p-16 md:p-20 pt-28 md:pt-32 max-h-[80rem] h-[80vh] flex flex-row items-center justify-center bg-noise overflow-hidden"
+    >
+        <div class="max-w-5xl w-full flex flex-col gap-8">
+            <div class="flex flex-col gap-2">
+                <h1 class="text-4xl font-bold">We are Lab Dinos!</h1>
+                <p class="text-lg">
+                    We are a Roblox games studio creating imaginative and
+                    wonderful experiences.
+                </p>
+            </div>
+            <a
+                href="#projects"
+                class="w-max cursor-pointer text-lg font-medium px-4 py-2 rounded-md bg-emerald-800/60 hover:bg-emerald-800/80 active:bg-emerald-800 transition-colors"
+                >See our work</a
+            >
+        </div>
+    </div>
+    <Content>
+        <h1 class="text-4xl font-bold">Hello, world!</h1>
+        <p class="">Hi.</p>
+    </Content>
+</Layout>
+
+<style>
+    .bg-noise {
+        background: linear-gradient(
+                rgba(4, 120, 87, 0.8),
+                rgba(4, 120, 87, 0.8)
+            ),
+            url("/noise.svg");
+    }
+</style>
