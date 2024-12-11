@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Content from "../components/Content.astro";
+import Hero from "../components/Hero.astro";
 
 const REDIRECT_URL = "https://discord.gg/VZJN8GB3bA";
 ---
@@ -12,8 +13,10 @@ const REDIRECT_URL = "https://discord.gg/VZJN8GB3bA";
     redirect={REDIRECT_URL}
 >
     <Header />
-    <Content isAfterHeader>
+    <Hero>
         <h1 class="text-4xl font-bold">Discord Server</h1>
+    </Hero>
+    <Content>
         <p>
             If you are not automatically redirected, click <a
                 href={REDIRECT_URL}

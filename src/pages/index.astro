@@ -2,6 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Content from "../components/Content.astro";
+import Hero from "../components/Hero.astro";
+
+import logo from "../assets/logo.svg?url";
 ---
 
 <Layout
@@ -9,36 +12,37 @@ import Content from "../components/Content.astro";
     description="LabDinos: A Roblox games studio creating imaginative and wonderful experiences."
 >
     <Header />
-    <div
-        class="w-full p-16 md:p-20 pt-28 md:pt-32 max-h-[80rem] h-[80vh] flex flex-row items-center justify-center bg-noise overflow-hidden"
-    >
-        <div class="max-w-5xl w-full flex flex-col gap-8">
-            <div class="flex flex-col gap-2">
-                <h1 class="text-4xl font-bold">We are Lab Dinos!</h1>
-                <p class="text-lg">
-                    We are a Roblox games studio creating imaginative and
-                    wonderful experiences.
-                </p>
-            </div>
-            <a
-                href="#projects"
-                class="w-max cursor-pointer text-lg font-medium px-4 py-2 rounded-md bg-emerald-800/60 hover:bg-emerald-800/80 active:bg-emerald-800 transition-colors"
-                >See our work</a
+    <Hero height="hero">
+        <div
+            class="flex gap-8 flex-col-reverse md:flex-row items-center justify-center"
+        >
+            <div
+                class="flex flex-col gap-8 items-center justify-center md:items-start"
             >
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold">
+                        We are Lab Dinos!
+                    </h1>
+                    <p class="md:text-lg">
+                        We are a Roblox games studio creating imaginative and
+                        wonderful experiences.
+                    </p>
+                </div>
+                <a
+                    href="#projects"
+                    class="w-max cursor-pointer text-lg font-medium px-4 py-2 rounded-md bg-emerald-700/60 hover:bg-emerald-700/80 active:bg-emerald-700 transition-colors"
+                    >See our work</a
+                >
+            </div>
+            <img
+                src={logo}
+                alt="LabDinos"
+                class="w-24 h-24 md:w-64 md:h-64 lg:w-96 lg:h-96"
+            />
         </div>
-    </div>
+    </Hero>
     <Content>
         <h1 class="text-4xl font-bold">Hello, world!</h1>
         <p class="">Hi.</p>
     </Content>
 </Layout>
-
-<style>
-    .bg-noise {
-        background: linear-gradient(
-                rgba(4, 120, 87, 0.8),
-                rgba(4, 120, 87, 0.8)
-            ),
-            url("/noise.svg");
-    }
-</style>
