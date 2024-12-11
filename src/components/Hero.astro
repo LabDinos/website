@@ -1,6 +1,6 @@
 ---
 interface Props {
-    height: "hero" | "content;";
+    height?: "hero" | "content" | "full";
 }
 
 const { height } = Astro.props;
@@ -8,7 +8,11 @@ const { height } = Astro.props;
 
 <div
     class={"w-full bg-zinc-950" +
-        (height === "hero" ? " max-h-[40rem] md:max-h-[50rem] h-[80vh]" : "")}
+        (height === "hero"
+            ? " max-h-[40rem] md:max-h-[50rem] h-[80vh]"
+            : height === "full"
+              ? " h-screen"
+              : "")}
 >
     <div
         class="w-full h-full p-16 md:p-20 pt-28 md:pt-32 bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-emerald-800 to-80% flex justify-center"

@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import logo from "../assets/logo.svg?url";
+
+const REDIRECT_URL = "/";
+---
+
+<Layout
+    title="LabDinos | 404"
+    description="LabDinos: A Roblox games studio creating imaginative and wonderful experiences."
+>
+    <Header />
+    <Hero height="full">
+        <div
+            class="w-full flex gap-8 flex-col-reverse md:flex-row items-center justify-center"
+        >
+            <div
+                class="w-full flex flex-col gap-8 items-center justify-center md:items-start"
+            >
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold">
+                        404 Not Found
+                    </h1>
+                    <p class="md:text-lg">
+                        Sorry, the page you are looking for does not exist.
+                    </p>
+                </div>
+                <a
+                    href={REDIRECT_URL}
+                    class="w-max cursor-pointer text-lg font-medium px-4 py-2 rounded-full bg-emerald-700/60 hover:bg-emerald-700/80 active:bg-emerald-700 transition-colors"
+                    >Return Home</a
+                >
+            </div>
+            <div class="flex-grow"></div>
+            <img
+                src={logo}
+                alt="LabDinos"
+                class="w-24 h-24 md:w-64 md:h-64 lg:w-96 lg:h-96"
+            />
+        </div>
+    </Hero>
+</Layout>
