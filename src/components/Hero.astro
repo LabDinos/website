@@ -4,23 +4,29 @@ interface Props {
 }
 
 const { height } = Astro.props;
+import noise from "../assets/noise.png?url";
 ---
 
 <div
     class={"w-full bg-zinc-950" +
         (height === "hero"
-            ? " max-h-[40rem] md:max-h-[50rem] h-[80vh]"
+            ? " max-h-[30rem] md:max-h-[50rem] h-[80vh]"
             : height === "full"
               ? " h-screen"
               : "")}
 >
     <div
-        class="w-full h-full p-16 md:p-20 pt-28 md:pt-32 bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-emerald-800 to-80% flex justify-center"
+        class="w-full h-full bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-emerald-800 to-80% flex justify-center"
     >
         <div
-            class="max-w-5xl w-full flex flex-col gap-8 items-center justify-center text-center md:text-left md:items-start"
+            class="w-full h-full p-16 md:p-20 pt-28 md:pt-32 flex justify-center"
+            style={`background-image: url(${noise}); background-blend-mode: multiply;`}
         >
-            <slot />
+            <div
+                class="max-w-5xl w-full flex flex-col gap-8 items-center justify-center md:items-start"
+            >
+                <slot />
+            </div>
         </div>
     </div>
 </div>
