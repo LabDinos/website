@@ -11,12 +11,13 @@
     },
     "dependencies": {
         "@astrojs/sitemap": "^3.2.1",
-        "@astrojs/tailwind": "^5.1.4",
+        "@tailwindcss/vite": "^4.0.6",
         "astro": "^5.1.1",
-        "tailwindcss": "^3.4.17"
+        "tailwindcss": "^4.0.6"
     },
     "devDependencies": {
         "@eslint/js": "^9.17.0",
+        "@tailwindcss/typography": "^0.5.16",
         "eslint": "^9.17.0",
         "globals": "^15.14.0",
         "typescript-eslint": "^8.18.2"

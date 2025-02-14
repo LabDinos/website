@@ -1,15 +1,19 @@
 ---
 interface Props {
     isAfterHeader?: boolean;
+    prose?: boolean;
 }
-const { isAfterHeader = false } = Astro.props;
+const { isAfterHeader = false, prose = false } = Astro.props;
 ---
 
 <main
-    class={"flex justify-center w-full h-full overflow-visible p-8 md:p-16" +
+    class={"flex justify-center w-full h-full overflow-visible p-8 md:p-16 bg-zinc-900 flex-grow" +
         (isAfterHeader ? " pt-24 md:pt-32" : "")}
 >
-    <div class="w-full max-w-4xl flex flex-col gap-4">
+    <div
+        class={"w-full max-w-5xl" +
+            (prose ? " prose prose-invert" : " flex flex-col gap-4")}
+    >
         <slot />
     </div>
 </main>
